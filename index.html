@@ -1,0 +1,241 @@
+<!Doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiGMaL | Machine Learning Interest Group</title>
+  <meta name="description" content="SiGMaL is a student-run interest group for machine learning: talks, workshops, paper-reading circles and projects. Free and open to everyone.">
+  <meta name="theme-color" content="#3023c6">
+  <meta property="og:title" content="SiGMaL | Machine Learning Interest Group">
+  <meta property="og:description" content="Talks, workshops, paper-reading circles and projects. Free, student-run, open to everyone.">
+  <meta property="og:type" content="website">
+  <!-- TODO: add og:image (1200x630), og:url and a favicon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ MENU (hamburger + full-screen overlay) ============ -->
+  <header class="topbar">
+    <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="overlay" id="menu" aria-label="Main" aria-hidden="true">
+    <button class="menu-close" id="menu-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M3 3L21 21M21 3L3 21"/>
+      </svg>
+    </button>
+    <!--<a class="menu-logo" href="#top" aria-label="SiGMaL home">
+      <img src="sigmal_icon.png" alt="SiGMaL">
+    </a>-->
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#speak">Speak</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#join">Join</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1 id="welcome-text">Welcome!</h1>
+        <p class="hero-dates">
+          Machine Learning Interest Group<br>
+
+        </p>
+        <p class="hero-lead">Website is under development! View <a href="https://sites.google.com/view/mlseries" target="_blank">archives</a>.<br></p>
+        <a class="btn" href="https://sigmal.zulipchat.com/login/" target="_blank">Join the community</a>
+      </div>
+      <div class="hero-art">
+        <img src="sigmal_logo.png" alt="SiGMaL: Machine Learning Interest Group">
+      </div>
+    </section>
+
+    <!-- ============ ABOUT + STATS ============ -->
+    <section class="block" id="about">
+      <h2>Who Are We?</h2>
+      <p>SiGMaL is an online <code>student-run</code> initiative, centered around AI/ML and problem-solving. Our aim is to enrich students’ academic and technical journeys by fostering a thriving virtual community driven by online volunteering, engagement, creativity and collaborative learning.
+</p>
+      <p>We strive to bring together beginners, tinkerers and researchers, along with practitioners from industry. Everything we run is free, volunteer-led and open to everyone.</p>
+
+      <ul class="stats">
+        <li><strong data-count="3">3</strong><span>Years</span></li>
+        <li><strong data-count="12">12</strong><span>Workshops</span></li>
+        <li><strong data-count="10">10</strong><span>Events</span></li>
+        <li><strong data-count="3000">3000</strong><span>Members</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ ACTIVITIES ============ -->
+    <section class="block" id="activities">
+      <h2>One session, many ways in</h2>
+      <p>Pick the format that fits you. Nobody needs to be an expert to walk in.</p>
+      <div class="grid2">
+        <article>
+          <h3>Talks</h3>
+          <p>20 to 30 minutes on something you built, broke or learnt. Models, tools, research, careers.</p>
+        </article>
+        <article>
+          <h3>Workshops</h3>
+          <p>Laptops open, code along, leave with a working notebook. Python, NumPy, PyTorch and beyond.</p>
+        </article>
+        <article>
+          <h3>Paper reading circles</h3>
+          <p>One paper, one small group. Everyone gets a turn to explain a section and ask questions.</p>
+        </article>
+        <article>
+          <h3>Contests</h3>
+          <p>ML challenges and weekend builds.</p>
+        </article>
+      </div>
+      <p class="topics">Topics we love: ML, deep learning, NLP &amp; LLMs, computer vision, MLOps, data engineering, ethics &amp; fairness.</p>
+    </section>
+
+    <!-- ============ EVENTS ============ -->
+    <section class="block" id="events">
+      <h2>Next up ...</h2>
+      <p class="next"><strong>Next session:</strong> date and venue coming soon. Join our community group and you'll hear the moment registrations open. Free, open to all students.</p>
+      <a class="btn" href="#join">Get notified</a>
+
+      <h3 class="sub">Recent events</h3>
+      <ul class="events" id="past-events">
+        <!-- Rendered by script.js from the EVENTS array -->
+        <noscript><li>Enable JavaScript to see past events.</li></noscript>
+      </ul>
+    </section>
+
+    <!-- ============ SPEAK ============ -->
+    <section class="block" id="speak">
+      <h2>Call for Proposals</h2>
+      <p>First-time speakers, seniors, students and industry folks all share the same stage. Pick the length that fits your idea. Sessions may be recorded for our channel.</p>
+      <ul class="plain">
+        <li><strong>Lightning talk</strong> 5 min</li>
+        <li><strong>Full talk</strong> 20 to 30 min</li>
+        <li><strong>Workshop</strong> 60 to 90 min, hands-on</li>
+        <li><strong>Paper reading</strong> 45 min, discussion-led</li>
+      </ul>
+      <a class="btn" href="mailto:sigmalcommunity@googlegroups.com?subject=SiGMaL%20session%20proposal">Propose a session</a>
+    </section>
+
+    <!-- ============ VOLUNTEER ============ -->
+    <section class="block" id="volunteer">
+      <h2>Help us run the room</h2>
+      <p>Every session is put together by student volunteers. Pick what you're good at, or tell us something new.</p>
+      <ul class="plain cols">
+        <li>Graphic design</li>
+        <li>Social media</li>
+        <li>Content writing</li>
+        <li>PR/Speaker outreach</li>
+        <li>Video editing</li>
+        <li>Web development</li>
+        <li>Logistics &amp; tech.</li>
+      </ul>
+      <a class="btn" href="https://forms.gle/Eb7RYcjarRkDtGq58" target="_blank">Volunteer with us</a>
+    </section>
+
+    <!-- ============ TEAM ============ -->
+    <section class="block" id="team">
+      <h2>Team</h2>
+      <p>The people who keep the group running.</p>
+      <div class="team" id="team-grid">
+        <!-- Rendered by script.js from the TEAM array -->
+      </div>
+    </section>
+
+    <!-- ============ PARTNERS ============ -->
+    <section class="block" id="partners">
+      <h2>Partners</h2>
+      <p>Huge thanks to everyone who helps us make these sessions possible.</p>
+
+      <!-- TODO: replace each placeholder with <li><a href="..."><img src="partners/x.png" alt="Name"></a></li> -->
+
+      <h3 class="tier">Community Partners</h3>
+      <ul class="logos">
+        <li class="logo-ph">Community A</li>
+        <li class="logo-ph">Community B</li>
+        <li class="logo-ph">Community C</li>
+      </ul>
+
+      <p class="after"><a href="mailto:sigmalcommunity@googlegroups.com?subject=Partnering%20with%20SiGMaL">Want to partner with SiGMaL</a>?</p>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="block" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Do I need prior ML experience?</summary>
+        <p>No. We run beginner-friendly sessions alongside advanced ones, and each event is labelled so you know what to expect.</p>
+      </details>
+      <details>
+        <summary>Is it free?</summary>
+        <p>Yes, every session is free for attendees.</p>
+      </details>
+      <details>
+        <summary>How can I give a talk?</summary>
+        <p>Check the <a href="#speak">Speak</a> section. First-time speakers are very welcome and we'll help you shape the idea.</p>
+      </details>
+      <details>
+        <summary>Where can I find past talks and materials?</summary>
+        <p>Slides, notebooks and recordings from past sessions are on our GitHub and YouTube channel, linked in the footer.</p>
+      </details>
+    </section>
+
+    <!-- ============ JOIN ============ -->
+    <section class="block" id="join">
+      <h2>Save yourself a seat at the next one</h2>
+      <p>Join to hear about it first.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://chat.whatsapp.com/BJybzruXqvODRgeSw9DZUV" target="_blank">Join WhatsApp community</a>
+        <a class="btn" href="https://sigmal.zulipchat.com/login/" target="_blank">Join Zulip</a>
+      </div>
+    </section>
+
+    <!-- ============ CODE OF CONDUCT ============ -->
+    <section class="block" id="coc">
+      <h2>Code of Conduct</h2>
+      <p>SiGMaL is a harassment-free space for everyone. Be respectful, be kind, credit others' work and ask before you assume. If something feels off, tell any core or write to <a href="mailto:sigmalcommunity@googlegroups.com">sigmalcommunity@googlegroups.com</a> and we'll act on it.</p>
+    </section>
+
+     <section class="block" id="coc">
+      <h2>Privacy Policy</h2>
+      <p>All registration data remains safely with the team and is never shared externally. Please refer to Zulip's policies to understand how they collect data when you interact in the forum.
+        <br>As this is a voluntary, non-commercial interest group, all members participate entirely of their own free will. In the event of any disagreement, dispute or difference of opinion, the decision of the steering team and core members shall be considered final. By joining the group, members voluntarily acknowledge and agree to abide by its CoC, guidelines and decisions.
+
+</p>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <ul>
+      <li><a href="#coc">code of conduct</a></li>
+      <li><a href="#faq">faq</a></li>
+      <li><a href="#top">back to top</a></li>
+    </ul>
+    <ul class="right">
+      <li><a href="mailto:sigmalcommunity@googlegroups.com">email</a></li>
+      <li><a href="https://x.com/ml_decoded" target="_blank" rel="noopener">X</a></li>
+      <li><a href="https://linkedin.com/company/ml-decoded" target="_blank" rel="noopener">linkedin</a></li>
+      <li><a href="https://www.youtube.com/@ml_decoded" target="_blank" rel="noopener">youtube</a></li>
+    </ul>
+  </footer>
+  <p class="copy">© <span id="year">2026</span> SiGMaL. Credits: Theme adapted from EuroSciPy.</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
