@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speakers | SiGMaL</title>
+  <meta name="description" content="Our wonderful guest speakers: the researchers and practitioners who have shared their work with the SiGMaL community.">
+  <meta name="theme-color" content="#3023c6">
+  <meta property="og:title" content="Speakers | SiGMaL">
+  <meta property="og:description" content="The guest speakers who have shared their knowledge with the SiGMaL community.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<style>
+/* ---------- Page header ---------- */
+.page-head { padding: 110px var(--pad) 0; }
+.page-head h1 { font-size: clamp(38px, 5vw, 56px); font-weight: 600; margin-bottom: 20px; }
+.page-lead { font-size: clamp(20px, 2.4vw, 30px); font-weight: 300; max-width: 1000px; margin-bottom: 14px; }
+.count { font-weight: 600; color: var(--coral); margin: 0; }
+
+/* ---------- Card grid ---------- */
+.speakers-block { padding-top: clamp(30px, 4vw, 50px); }
+.speakers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.speaker {
+  background: var(--gray);
+  color: #1d1666;                /* deep indigo text on the gray card */
+  display: flex; flex-direction: column;
+  height: 100%;
+}
+
+/* Photo: square, coral behind it so a missing photo still looks intentional */
+.speaker-photo {
+  aspect-ratio: 1 / 1;
+  background: var(--coral);
+  display: grid; place-items: center;
+  overflow: hidden;
+}
+.speaker-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.speaker-photo .initials { font-size: clamp(54px, 7vw, 88px); font-weight: 700; color: var(--gray); }
+
+.speaker-body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.speaker-name { font-size: clamp(24px, 2.6vw, 30px); font-weight: 700; line-height: 1.15; margin: 0 0 4px; color: var(--coral); }
+.speaker .speaker-role { font-size: .75em; font-weight: 600; line-height: 1.3; margin: 0 0 12px; color: inherit; }
+
+.speaker .speaker-talk {
+  font-size: .68em; font-weight: 600; line-height: 1.3; margin: 0 0 10px;
+  padding: 6px 8px; background: var(--coral); color: var(--white); align-self: flex-start;
+}
+
+.speaker .speaker-bio { font-size: .72em; font-weight: 400; line-height: 1.5; margin: 0; color: #2b2380; }
+.speaker .speaker-bio.clamped {
+  display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.more {
+  align-self: flex-start; margin-top: 8px;
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; font-size: .68em; font-weight: 700; color: #1d1666;
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px;
+}
+.more:hover { color: var(--coral); }
+.more:focus-visible { outline: 3px solid var(--bg); outline-offset: 3px; }
+
+.speaker-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: auto; padding-top: 14px; font-size: .68em; }
+.speaker-links a { color: #1d1666; }
+.speaker-links a:hover { color: var(--coral); }
+
+/* Alternate card colour like the stat boxes on the home page */
+.speaker:nth-child(even) { background: var(--coral); color: var(--white); }
+.speaker:nth-child(even) .speaker-photo { background: var(--gray); }
+.speaker:nth-child(even) .speaker-photo .initials { color: var(--coral); }
+.speaker:nth-child(even) .speaker-name { color: var(--gray); }
+.speaker:nth-child(even) .speaker-bio { color: rgba(255,255,255,.92); }
+.speaker:nth-child(even) .speaker-talk { background: var(--gray); color: var(--coral); }
+.speaker:nth-child(even) .more,
+.speaker:nth-child(even) .speaker-links a { color: var(--white); }
+.speaker:nth-child(even) .more:hover,
+.speaker:nth-child(even) .speaker-links a:hover { color: #1d1666; }
+
+@media (max-width: 600px) {
+  .page-head { padding-top: 90px; }
+  .speakers { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+  <!-- ============ MENU (same as home page) ============ -->
+  <header class="topbar">
+    <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="overlay" id="menu" aria-label="Main" aria-hidden="true">
+    <button class="menu-close" id="menu-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M3 3L21 21M21 3L3 21"/>
+      </svg>
+    </button>
+    <ul>
+      <li><a href="index">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="speakers">Speakers</a></li>
+      <li><a href="index.html#speak">Speak</a></li>
+      <li><a href="index.html#volunteer">Volunteer</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="index.html#partners">Partners</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#join">Join</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="page-head">
+      <h1>Our wonderful guest speakers</h1>
+      <p class="page-lead">Professors, researchers and engineers who took the time to share their knowledge with the SiGMaL community. Thank you!</p>
+      <p class="count" id="speaker-count" aria-live="polite"></p>
+    </section>
+
+    <!-- ============ SPEAKER CARDS (rendered by speakers.js) ============ -->
+    <section class="block speakers-block" aria-label="Speakers">
+      <ul class="speakers" id="speakers-grid">
+        <noscript><li>Enable JavaScript to see our speakers.</li></noscript>
+      </ul>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="block">
+      <h2>Want to be on this page?</h2>
+      <p>First-time speakers are very welcome. Tell us your idea and we'll help you shape it.</p>
+      <a class="btn" href="mailto:sigmalcommunity@googlegroups.com?subject=SiGMaL%20session%20proposal">Propose a session</a>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <ul>
+      <li><a href="index.html#coc">code of conduct</a></li>
+      <li><a href="index.html#faq">faq</a></li>
+      <li><a href="index.html">home</a></li>
+    </ul>
+    <ul class="right">
+      <li><a href="https://x.com/ml_decoded" target="_blank" rel="noopener">X</a></li>
+      <li><a href="https://linkedin.com/company/ml-decoded" target="_blank" rel="noopener">linkedin</a></li>
+      <li><a href="https://www.youtube.com/@ml_decoded" target="_blank" rel="noopener">youtube</a></li>
+    </ul>
+  </footer>
+  <p class="copy">© <span id="year">2026</span> SiGMaL. Credits: Theme adapted from EuroSciPy.</p>
+
+  <script>
+/* ==========================================================
+   Fields:
+     name         required
+     designation  e.g. "Research Scientist, Some Lab"
+     photo        path like "speakers/jane-doe.jpg" (square or portrait works best)
+                  leave "" to show initials instead
+     bio          a few sentences
+     talk         optional: talk or workshop title
+     date         optional: "2026-10-18" (shown with the talk)
+     links        optional: [{ label: "linkedin", url: "..." }]
+
+   Order: newest first is a good default.
+   ========================================================== */
+
+// TODO: replace these placeholders with your real speakers.
+const SPEAKERS = [
+  {
+    name: "Prof. Jyothi Krishnan",
+    designation: "Assistant Teaching Professor, IIT-GN",
+    photo: "https://joinsigmal.github.io/archive/people/profjyothi.png",
+    bio: "Dr. Jyothi, our special guest for the event launch, is a multifaceted academic with a diverse background spanning across engineering, mathematics and education. With a BTech from NIT Calicut, an MS from our own institute and a PhD from UC Berkeley, she’s cultivated a rich interest in applied mathematics. Throughout her career, she's ventured into various roles including programming, bridge engineering, mathematical research. Currently serving as an Assistant Teaching Professor at the CCL Lab of IITGN, she plays a pivotal role in shaping the minds of future engineers.",
+  },
+  {
+    name: "Dr. Sudarshan Iyengar",
+    designation: "HOD, CSE, IIT Ropar",
+    photo: "https://joinsigmal.github.io/archive/people/profsudarshan.PNG",
+    bio: "Prof. Iyengar currently serves as the head of the CSE dept. & faculty coordinator of Minor in AI program at IIT RPR. With a Ph.D. from the prestigious IISc, Prof. Sudarshan is renowned for his exemplary teaching prowess. Having conducted over 350 captivating popular science talks, he has engaged students spanning from high school to advanced graduate programs. Moreover, his innovative teaching methodologies have transcended traditional boundaries, with 100+ hours of his online lectures reaching hundreds of thousands of eager learners.",
+  },
+  {
+    name: "S Anand",
+    designation: "CEO, Co-Founder, Gramener",
+    photo: "https://joinsigmal.github.io/archive/people/anandsir.png",
+    bio: "Mr. Anand is the CEO and co-founder of Gramener, an international data science company. He is recognized as one of India's top 10 data scientists and is a regular TEDx speaker. A gold medalist from IIM Bangalore and an alumnus of IIT Madras, London Business School, IBM, Infosys Consulting, Lehman Brothers and BCG, he is the world's first officially designated LLM Psychologist!",
+  },
+  {
+    name: "Dr. Jayakrishnan Madathil",
+    designation: "Assistant Professor, Your University",
+    photo: "https://joinsigmal.github.io/archive/people/JKsir.png",
+    bio: "Dr. JK is a senior scientist at NPTEL. He specializes in the use of Information and Communication Technologies for Education (ICT4DE). His research focuses on improving In-Service Teacher Training programs in India's higher education sector. Sir holds both his postgraduate and doctoral degrees from IIT Bombay and has been at the forefront of integrating technology in education.",
+  },
+  {
+    name: "Arun Prakash A.",
+    designation: "Researcher, AI4Bharat",
+    photo: "https://joinsigmal.github.io/archive/people/arunsir.jpeg",
+    bio: "Mr. Arun is a distinguished researcher at AI4Bharat IIT Madras, with a research focus on accelerating the training and inference of transformer-based models. His work lies at the intersection of efficiency and effectiveness in modern deep learning systems. He's also served as a course instructor at the degree level of the IITM's Data Science program.",
+  },
+  {
+    name: "Piyush Wairale",
+    designation: "Founder, PiyushAI",
+    photo: "https://joinsigmal.github.io/archive/people/PiyushSir.jpg",
+    bio: "Mr. Piyush is the founder of PiyushAI Edtech Pvt. Ltd. He is a popular AI educator and has served as an instructor for the IITM's Data science program and has also been associated as an Educator with Microsoft Learn and AWS Academy. In addition, he has actively contributed to NPTEL–associated workshops, faculty development programs (FDPs) and national-level academic initiatives. ",
+  }
+];
+
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+/* ---------- menu (same behaviour as the home page) ---------- */
+const menu = $("#menu");
+const openBtn = $("#menu-open");
+const closeBtn = $("#menu-close");
+
+function setMenu(open) {
+  menu.classList.toggle("open", open);
+  menu.setAttribute("aria-hidden", String(!open));
+  openBtn.setAttribute("aria-expanded", String(open));
+  document.body.style.overflow = open ? "hidden" : "";
+  if (open) closeBtn.focus(); else openBtn.focus({ preventScroll: true });
+}
+openBtn.addEventListener("click", () => setMenu(true));
+closeBtn.addEventListener("click", () => setMenu(false));
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && menu.classList.contains("open")) setMenu(false);
+});
+// Links to other pages navigate away; only same-page links need the menu closed.
+$$("#menu a").forEach(a => a.addEventListener("click", () => {
+  menu.classList.remove("open");
+  menu.setAttribute("aria-hidden", "true");
+  openBtn.setAttribute("aria-expanded", "false");
+  document.body.style.overflow = "";
+}));
+
+/* ---------- speaker cards ---------- */
+function initials(name) {
+  return name.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join("");
+}
+
+function formatDate(iso) {
+  const d = new Date(iso + "T00:00:00");
+  return isNaN(d) ? "" : d.toLocaleString("en-IN", { month: "short", year: "numeric" });
+}
+
+function renderSpeakers() {
+  const grid = $("#speakers-grid");
+  grid.innerHTML = "";
+
+  SPEAKERS.forEach(s => {
+    const li = document.createElement("li");
+    li.className = "speaker";
+
+    // photo (falls back to initials if missing or broken)
+    const ph = document.createElement("div");
+    ph.className = "speaker-photo";
+    const showInitials = () => {
+      ph.innerHTML = "";
+      const i = document.createElement("span");
+      i.className = "initials";
+      i.setAttribute("aria-hidden", "true");
+      i.textContent = initials(s.name);
+      ph.append(i);
+    };
+    if (s.photo) {
+      const img = document.createElement("img");
+      img.src = s.photo;
+      img.alt = "Photo of " + s.name;
+      img.loading = "lazy";
+      img.addEventListener("error", showInitials);
+      ph.append(img);
+    } else {
+      showInitials();
+    }
+
+    const body = document.createElement("div");
+    body.className = "speaker-body";
+
+    const name = document.createElement("h2");
+    name.className = "speaker-name";
+    name.textContent = s.name;
+    body.append(name);
+
+    if (s.designation) {
+      const role = document.createElement("p");
+      role.className = "speaker-role";
+      role.textContent = s.designation;
+      body.append(role);
+    }
+
+    if (s.talk) {
+      const talk = document.createElement("p");
+      talk.className = "speaker-talk";
+      const when = s.date ? formatDate(s.date) : "";
+      talk.textContent = when ? `${s.talk} · ${when}` : s.talk;
+      body.append(talk);
+    }
+
+    if (s.bio) {
+      const bio = document.createElement("p");
+      bio.className = "speaker-bio";
+      bio.textContent = s.bio;
+      body.append(bio);
+
+      // Trim long bios; add "Read more" only if the text is actually cut off.
+      if (s.bio.length > 180) {
+        bio.classList.add("clamped");
+        const more = document.createElement("button");
+        more.type = "button";
+        more.className = "more";
+        more.textContent = "Read more";
+        more.setAttribute("aria-expanded", "false");
+        more.addEventListener("click", () => {
+          const open = bio.classList.toggle("clamped") === false;
+          more.textContent = open ? "Show less" : "Read more";
+          more.setAttribute("aria-expanded", String(open));
+        });
+        body.append(more);
+      }
+    }
+
+    if (s.links && s.links.length) {
+      const links = document.createElement("div");
+      links.className = "speaker-links";
+      s.links.forEach(l => {
+        const a = document.createElement("a");
+        a.href = l.url;
+        a.textContent = l.label;
+        a.target = "_blank";
+        a.rel = "noopener";
+        links.append(a);
+      });
+      body.append(links);
+    }
+
+    li.append(ph, body);
+    grid.append(li);
+  });
+
+  $("#speaker-count").textContent =
+    SPEAKERS.length + (SPEAKERS.length === 1 ? " speaker so far" : " invited speakers so far");
+}
+
+renderSpeakers();
+$("#year").textContent = new Date().getFullYear();  
+  </script>
+</body>
+</html>

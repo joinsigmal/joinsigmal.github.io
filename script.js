@@ -14,8 +14,9 @@ const EVENTS = [
 const TEAM = [
   { name: "Somsubhra",  role: "Core",        photo: "", links: [{ label: "linkedin", url: "#" }] },
   { name: "Advait",   role: "Core",     photo: "", links: [{ label: "linkedin",   url: "#" }] },
-  { name: "", role: "",     photo: "", links: [] },
-  { name: "",  role: "", photo: "", links: [] },
+  { name: "Chirantan", role: "Volunteer",     photo: "", links: [] },
+  { name: "Rohit",  role: "Volunteer", photo: "", links: [] },
+  { name: "TBA",  role: "Volunteer", photo: "", links: [] },
 ];
 
 const $  = (s, r = document) => r.querySelector(s);
