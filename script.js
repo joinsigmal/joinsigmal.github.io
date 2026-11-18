@@ -12,11 +12,7 @@ const EVENTS = [
 
 // TODO: replace with your real team. Put photos in /team/ and set `photo`.
 const TEAM = [
-  { name: "Somsubhra",  role: "Core",        photo: "", links: [{ label: "linkedin", url: "#" }] },
-  { name: "Advait",   role: "Core",     photo: "", links: [{ label: "linkedin",   url: "#" }] },
-  { name: "Chirantan", role: "Volunteer",     photo: "", links: [] },
-  { name: "Rohit",  role: "Volunteer", photo: "", links: [] },
-  { name: "TBA",  role: "Volunteer", photo: "", links: [] },
+  { name: "To be Updated",  role: "Core",        photo: "", links: [{ label: "linkedin", url: "#" }] },
 ];
 
 const $  = (s, r = document) => r.querySelector(s);
@@ -148,7 +144,7 @@ const greetings = [
     "स्वागत है!",
     "স্বাগতম!",
     "స్వాగతం!",
-    "வரவேற்கிறோம்!",
+    "நல்வரவு!",
     "ಸ್ವಾಗತ!",
     "സ്വാഗതം!",
     "સ્વાગત છે!",
