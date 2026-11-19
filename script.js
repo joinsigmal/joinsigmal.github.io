@@ -12,7 +12,7 @@ const EVENTS = [
 
 // TODO: replace with your real team. Put photos in /team/ and set `photo`.
 const TEAM = [
-  { name: "To be Updated",  role: "Core",        photo: "", links: [{ label: "linkedin", url: "#" }] },
+  { name: "To be Updated",  role: "",        photo: "", links: [{ label: "linkedin", url: "#" }] },
 ];
 
 const $  = (s, r = document) => r.querySelector(s);
