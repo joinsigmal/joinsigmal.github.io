@@ -3,16 +3,16 @@
    Edit the EVENTS and TEAM arrays; the page renders them.
    ========================================================== */
 
-// TODO: replace with your real events. Newest first.
 const EVENTS = [
   { date: "2025-12-01", title: "Article Contest for EPOCHS",         type: "Contest", url: "https://joinsigmal.github.io/epochs/" },
   { date: "2025-10-18", title: "Pi-square seminar", type: "Workshop",      url: "https://sites.google.com/ds.study.iitm.ac.in/pisq-seminar-mls" },
   { date: "2025-06-27", title: "LogicLooM 4.0 Finale",   type: "Paradox",        url: "https://joinsigmal.github.io/logicloom4/" }
 ];
 
-// TODO: replace with your real team. Put photos in /team/ and set `photo`.
 const TEAM = [
-  { name: "To be Updated",  role: "",        photo: "", links: [{ label: "linkedin", url: "#" }] },
+  { name: "Somsubhra",  role: "",        photo: "", links: [{ label: "linkedin", url: "https://www.linkedin.com/in/somsubhrad/" }] },
+  { name: "Pranshu",  role: "",        photo: "", links: [{ label: "linkedin", url: "https://in.linkedin.com/in/pransh-jais" }] },
+  { name: "Soumedhik",  role: "",        photo: "", links: [{ label: "linkedin", url: "https://ae.linkedin.com/in/soumedhik-bharati" }] },
 ];
 
 const $  = (s, r = document) => r.querySelector(s);
