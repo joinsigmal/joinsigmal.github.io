@@ -1,0 +1,86 @@
+<!Doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoC | SiGMaL</title>
+  <meta name="description" content="SiGMaL is a volunteer-run interest group for machine learning: talks, workshops, paper-reading circles and projects. Free and open to everyone.">
+  <meta name="theme-color" content="#3023c6">
+  <meta property="og:title" content="SiGMaL | Machine Learning Interest Group">
+  <meta property="og:description" content="Talks, workshops, paper-reading circles and projects. Free, student-run, open to everyone.">
+  <meta property="og:type" content="website">
+  <!-- TODO: add og:image (1200x630), og:url and a favicon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ MENU (hamburger + full-screen overlay) ============ -->
+  <header class="topbar">
+    <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="overlay" id="menu" aria-label="Main" aria-hidden="true">
+    <button class="menu-close" id="menu-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M3 3L21 21M21 3L3 21"/>
+      </svg>
+    </button>
+    <!--<a class="menu-logo" href="#top" aria-label="SiGMaL home">
+      <img src="sigmal_icon.png" alt="SiGMaL">
+    </a>-->
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="speakers">Speakers</a></li>
+      <li><a href="https://joinsigmal.github.io/archive/">Gallery</a></li>
+      <li><a href="https://epochs.netlify.app">Newsletter</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#speak">Speak</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#join">Join</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+
+    <!-- ============ CODE OF CONDUCT ============ -->
+    <section class="block" id="coc">
+      <h2>Code of Conduct & Reporting</h2>
+      <p>SiGMaL is a harassment-free and inclusive space for everyone. We follow the <a href="https://policies.python.org/python.org/code-of-conduct/" target="_blank">Python Software Foundation's Code of Conduct</a> to build an open and welcoming community. Be respectful, be kind, credit others' work and ask before you assume.<br>
+      All members, including but not limited to participants, speakers, organizers and other community members, are expected to adhere to our Code of Conduct during online discussions and at all community events.<br>
+      If something feels off, please do not hesitate to report it by emailing us at <a href="mailto:sigmalcommunity@googlegroups.com">sigmalcommunity@googlegroups.com</a>. We take every report seriously and are committed to addressing concerns appropriately.<br>
+The identities of both the person submitting a report and the individual being reported will be kept strictly confidential and will not be publicly disclosed. To promote transparency and accountability, we may maintain a record of reported incidents and the actions taken, without revealing anyone's identity. This will help reinforce community standards, raise awareness and discourage similar incidents in the future. Our goal is to foster a respectful, inclusive, and safe environment for everyone.
+</p>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <ul>
+      <li><a href="#coc">code of conduct</a></li>
+      <li><a href="#faq">faq</a></li>
+      <li><a href="#top">back to top</a></li>
+    </ul>
+    <ul class="right">
+      <li><a href="https://x.com/ml_decoded" target="_blank" rel="noopener">X <i class="fa-solid fa-external-link-alt"></i>
+</a></li>
+      <li><a href="https://linkedin.com/company/ml-decoded" target="_blank" rel="noopener">linkedin <i class="fa-solid fa-external-link-alt"></i>
+</a></li>
+      <li><a href="https://www.youtube.com/@ml_decoded" target="_blank" rel="noopener">youtube <i class="fa-solid fa-external-link-alt"></i></a></li>
+    </ul>
+  </footer>
+  <p class="copy">© <span id="year">2026</span> SiGMaL. Credits: Theme adapted from EuroSciPy.</p>
+
+  <script src="script.js"></script>
+</body>
+</html>

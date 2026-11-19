@@ -7,7 +7,7 @@
 const EVENTS = [
   { date: "2025-12-01", title: "Article Contest for EPOCHS",         type: "Contest", url: "https://joinsigmal.github.io/epochs/" },
   { date: "2025-10-18", title: "Pi-square seminar", type: "Workshop",      url: "https://sites.google.com/ds.study.iitm.ac.in/pisq-seminar-mls" },
-  { date: "2025-06-27", title: "LogicLooM 4.0 Finale?",   type: "Paradox",        url: "https://joinsigmal.github.io/logicloom4/" }
+  { date: "2025-06-27", title: "LogicLooM 4.0 Finale",   type: "Paradox",        url: "https://joinsigmal.github.io/logicloom4/" }
 ];
 
 // TODO: replace with your real team. Put photos in /team/ and set `photo`.
