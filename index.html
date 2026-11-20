@@ -17,41 +17,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
 
   <!-- ============ MENU (hamburger + full-screen overlay) ============ -->
-  <header class="topbar">
-    <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
-  </header>
-
-  <nav class="overlay" id="menu" aria-label="Main" aria-hidden="true">
-    <button class="menu-close" id="menu-close" aria-label="Close menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M3 3L21 21M21 3L3 21"/>
-      </svg>
-    </button>
-    <!--<a class="menu-logo" href="#top" aria-label="SiGMaL home">
-      <img src="sigmal_icon.png" alt="SiGMaL">
-    </a>-->
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="speakers">Speakers</a></li>
-      <li><a href="https://joinsigmal.github.io/archive/">Gallery</a></li>
-      <li><a href="https://epochs.netlify.app">Newsletter</a></li>
-      <li><a href="#activities">Activities</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#speak">Speak</a></li>
-      <li><a href="#volunteer">Volunteer</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#partners">Partners</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#join">Join</a></li>
-    </ul>
-  </nav>
+{% include nav.html %}
 
   <main id="top">
 
@@ -67,7 +38,7 @@
         <a class="btn" href="https://mlseries.pythonanywhere.com/" target="_blank">Join the community <i class="fa-solid fa-users"></i></a>
       </div>
       <div class="hero-art">
-        <img src="sigmal_logo.png" alt="SiGMaL: Machine Learning Interest Group">
+        <img src="{{ '/assets/images/sigmal_logo.png' | relative_url }}" alt="SiGMaL">
       </div>
     </section>
 
@@ -114,7 +85,7 @@
     <!-- ============ EVENTS ============ -->
     <section class="block" id="events">
       <h2>Next up ...</h2>
-      <p class="next"><strong>Next session:</strong> date and venue coming soon. Join our community group and you'll hear the moment registrations open. Free, open to all students.</p>
+      <p class="next"><strong>Next session:</strong> date and venue coming soon. <a href="join-us.pdf">Join</a> our community group and you'll hear the moment registrations open. Free, open to all students.</p>
       <a class="btn" href="#join">Get notified</a>
 
       <h3 class="sub">Recent events</h3>
@@ -140,7 +111,7 @@
     <!-- ============ VOLUNTEER ============ -->
     <section class="block" id="volunteer">
       <h2>Help us run the room</h2>
-      <p>Every session is put together by volunteers. Pick what you're good at, or tell us something new.</p>
+      <p>Every session is put together by <a href="call-for-volunteers.pdf">volunteers</a>. Pick what you're good at, or tell us something new.</p>
       <ul class="plain cols">
         <li>Graphic design</li>
         <li>Social media</li>
@@ -207,7 +178,7 @@
     <!-- ============ JOIN ============ -->
     <section class="block" id="join">
       <h2>Save yourself a seat at the next one</h2>
-      <p>Join to hear about it first.</p>
+      <p><a href="join-us.pdf">Join</a> to hear about it first.</p>
       <div class="btn-row">
         <a class="btn" href="https://chat.whatsapp.com/H2VfUeFShKJ4P0HEITV2PH" target="_blank">Join WhatsApp community <i class="fa-solid fa-arrow-up-right-from-square"></i>
 </a>
@@ -236,6 +207,6 @@
   <!-- ============ FOOTER ============ -->
 {% include foo.html %}
 
-  <script src="script.js"></script>
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
-<!doctype html>
+---
+---
+
+<!Doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -12,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 <style>
 /* ---------- Page header ---------- */
 .page-head { padding: 110px var(--pad) 0; }
@@ -94,30 +97,7 @@
 <body>
 
   <!-- ============ MENU (same as home page) ============ -->
-  <header class="topbar">
-    <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
-  </header>
-
-  <nav class="overlay" id="menu" aria-label="Main" aria-hidden="true">
-    <button class="menu-close" id="menu-close" aria-label="Close menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M3 3L21 21M21 3L3 21"/>
-      </svg>
-    </button>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="speakers">Speakers</a></li>
-      <li><a href="index.html#speak">Speak</a></li>
-      <li><a href="index.html#volunteer">Volunteer</a></li>
-      <li><a href="index.html#team">Team</a></li>
-      <li><a href="index.html#partners">Partners</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
-      <li><a href="index.html#join">Join</a></li>
-    </ul>
-  </nav>
+{% include nav.html %}
 
   <main id="top">
 
@@ -145,21 +125,7 @@
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <ul>
-      <li><a href="index.html#coc">code of conduct</a></li>
-      <li><a href="index.html#faq">faq</a></li>
-      <li><a href="index.html">home</a></li>
-    </ul>
-    <ul class="right">
-      <li><a href="https://x.com/ml_decoded" target="_blank" rel="noopener">X <i class="fa-solid fa-external-link-alt"></i>
-</a></li>
-      <li><a href="https://linkedin.com/company/ml-decoded" target="_blank" rel="noopener">linkedin <i class="fa-solid fa-external-link-alt"></i>
-</a></li>
-      <li><a href="https://www.youtube.com/@ml_decoded" target="_blank" rel="noopener">youtube <i class="fa-solid fa-external-link-alt"></i></a></li>
-    </ul>
-  </footer>
-  <p class="copy">© <span id="year">2026</span> SiGMaL. Credits: Theme adapted from EuroSciPy.</p>
+{% include foo.html %}
 
   <script>
 /* ==========================================================
@@ -354,6 +320,7 @@ function renderSpeakers() {
 
 renderSpeakers();
 $("#year").textContent = new Date().getFullYear();  
-  </script>
+</script>
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>

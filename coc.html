@@ -17,41 +17,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
 
   <!-- ============ MENU (hamburger + full-screen overlay) ============ -->
-  <header class="topbar">
-    <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
-  </header>
-
-  <nav class="overlay" id="menu" aria-label="Main" aria-hidden="true">
-    <button class="menu-close" id="menu-close" aria-label="Close menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M3 3L21 21M21 3L3 21"/>
-      </svg>
-    </button>
-    <!--<a class="menu-logo" href="#top" aria-label="SiGMaL home">
-      <img src="sigmal_icon.png" alt="SiGMaL">
-    </a>-->
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="speakers">Speakers</a></li>
-      <li><a href="https://joinsigmal.github.io/archive/">Gallery</a></li>
-      <li><a href="https://epochs.netlify.app">Newsletter</a></li>
-      <li><a href="#activities">Activities</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#speak">Speak</a></li>
-      <li><a href="#volunteer">Volunteer</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#partners">Partners</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#join">Join</a></li>
-    </ul>
-  </nav>
+{% include nav.html %}
 
   <main id="top">
 
@@ -70,6 +41,6 @@ The identities of both the person submitting a report and the individual being r
   <!-- ============ FOOTER ============ -->
 {% include foo.html %}
 
-  <script src="script.js"></script>
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>
